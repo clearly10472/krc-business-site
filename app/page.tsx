@@ -125,7 +125,8 @@ export default function Home() {
             <span className="text-xs tracking-widest uppercase text-stone-500">AI Business Support</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black leading-[1.15] mb-6" style={{ color: "var(--fg)" }}>
-            時間が増える。売上が動く。<br />それがAIの仕事。
+            <span className="block whitespace-nowrap">時間が増える。売上が動く。</span>
+            <span className="block">それがAIの仕事。</span>
           </h1>
           <p className="text-lg text-stone-500 max-w-xl mx-auto leading-relaxed mb-10">
             SNS更新・集客文章・定型業務。<br />
