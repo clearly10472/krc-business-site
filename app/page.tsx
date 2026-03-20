@@ -116,37 +116,31 @@ export default function Home() {
       </header>
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden pt-16">
-        <Image src="/generated/hero.jpg" alt="" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-white/60" />
-        <div ref={heroRef} className="fade-up relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-stone-300 rounded-full px-4 py-1.5 mb-8 bg-white/80">
-            <Star className="w-3.5 h-3.5" style={{ color: "var(--orange)" }} fill="currentColor" />
-            <span className="text-xs tracking-widest uppercase text-stone-500">AI Business Support</span>
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
+        <Image src="/generated/hero-handwritten.png" alt="時間が増える。売上が動く。それがAIの仕事。" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-white/10" />
+        <div ref={heroRef} className="fade-up relative z-10 w-full flex flex-col items-center justify-end pb-16 md:pb-24 min-h-screen px-6">
+          <div className="text-center mb-8 max-w-xl mx-auto">
+            <p className="text-base md:text-lg text-stone-700 leading-relaxed mb-6">
+              SNS更新・集客文章・定型業務。<br />
+              地元のお店が抱える"時間のムダ"を、AIでまるごと解消します。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <a href="#contact" className="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg" style={{ background: "var(--green)" }}>
+                まずは無料で相談する <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="#services" className="inline-flex items-center justify-center gap-2 text-stone-700 font-medium px-8 py-4 rounded-full border border-stone-300 bg-white/90 hover:bg-white transition-colors">
+                サービスを見る
+              </a>
+            </div>
+            <p className="text-xs text-stone-500 tracking-wide">押し売り一切なし · 無料相談</p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black leading-[1.15] mb-6" style={{ color: "var(--fg)" }}>
-            <span className="block whitespace-nowrap">時間が増える。売上が動く。</span>
-            <span className="block">それがAIの仕事。</span>
-          </h1>
-          <p className="text-lg text-stone-500 max-w-xl mx-auto leading-relaxed mb-10">
-            SNS更新・集客文章・定型業務。<br />
-            地元のお店が抱える"時間のムダ"を、AIでまるごと解消します。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-full transition-colors" style={{ background: "var(--green)" }}>
-              まずは無料で相談する <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="#services" className="inline-flex items-center justify-center gap-2 text-stone-600 font-medium px-8 py-4 rounded-full border border-stone-300 bg-white/80 hover:bg-white transition-colors">
-              サービスを見る
-            </a>
-          </div>
-          <p className="mt-6 text-xs text-stone-400 tracking-wide">押し売り一切なし · 無料相談</p>
         </div>
       </section>
 
       {/* ── Stats ── */}
       <section className="py-14 px-6" style={{ background: "var(--fg)" }}>
-        <div ref={statsRef} className="fade-up max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div ref={statsRef} className="fade-up max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
             { n: "初心者でも安心", l: "AIが初めてでも、丁寧にサポートします" },
             { n: "地域密着", l: "対面・オンライン、どちらにも対応" },
@@ -162,7 +156,7 @@ export default function Home() {
 
       {/* ── Pain Points ── */}
       <section className="py-28 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div ref={painRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Pain Points</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-4" style={{ color: "var(--fg)" }}>
@@ -195,7 +189,7 @@ export default function Home() {
 
       {/* ── How it works ── */}
       <section className="py-28 px-6" style={{ background: "#f0ede8" }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div ref={howRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>How it works</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>3ステップで始められる</h2>
@@ -221,7 +215,7 @@ export default function Home() {
 
       {/* ── Services ── */}
       <section id="services" className="py-28 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div ref={servicesRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Services</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>3つのサービス</h2>
@@ -280,7 +274,7 @@ export default function Home() {
 
       {/* ── Case Study ── */}
       <section className="py-28 px-6" style={{ background: "#f0ede8" }}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div ref={caseRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Case Study</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>導入事例</h2>
@@ -312,7 +306,7 @@ export default function Home() {
 
       {/* ── Why ── */}
       <section className="py-28 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div ref={reasonsRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Why FlowBoost Lab</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>選ばれる理由</h2>
@@ -338,7 +332,7 @@ export default function Home() {
 
       {/* ── About ── */}
       <section className="py-28 px-6" style={{ background: "var(--fg)" }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div ref={aboutRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>About</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16 text-white">運営者について</h2>
@@ -369,7 +363,7 @@ export default function Home() {
 
       {/* ── Pricing ── */}
       <section id="pricing" className="py-28 px-6" style={{ background: "#f0ede8" }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div ref={pricingRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Pricing</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>料金プラン</h2>
