@@ -429,7 +429,6 @@ export default function Home() {
             <p className="text-stone-500 text-sm mt-5">LINEで友達追加して<br />気軽にメッセージしてください</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-stone-400 text-xs">
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" style={{ color: "var(--green)" }} />返信24時間以内</span>
             <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" style={{ color: "var(--green)" }} />押し売りなし</span>
             <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" style={{ color: "var(--green)" }} />無料相談</span>
           </div>
