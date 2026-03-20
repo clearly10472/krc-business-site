@@ -2,10 +2,11 @@
 
 :root {
   --bg: #fafaf8;
-  --fg: #1a1a18;
-  --green: #4a7c59;
+  --fg: #2f2d2b;
+  --dark-bg: #2d5a3d;
+  --green: #2d5a3d;
   --orange: #e8a055;
-  --card-green: #eff6f1;
+  --card-green: #e8f2ec;
   --card-orange: #fdf3e7;
   --card-purple: #eef0fb;
   --card-blue: #e8f4fd;

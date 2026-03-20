@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-14 px-6" style={{ background: "var(--fg)" }}>
+      <section className="py-14 px-6" style={{ background: "var(--dark-bg)" }}>
         <div ref={statsRef} className="fade-up max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
             { n: "初心者でも安心", l: "AIが初めてでも、丁寧にサポートします" },
@@ -147,8 +147,8 @@ export default function Home() {
             { n: "小さく始められる", l: "まず1つの業務から、気軽に試せます" },
           ].map((s) => (
             <div key={s.n}>
-              <div className="text-xl font-black text-white mb-2">{s.n}</div>
-              <div className="text-sm text-stone-400 leading-relaxed">{s.l}</div>
+              <div className="text-xl font-black mb-2 text-white">{s.n}</div>
+              <div className="text-sm leading-relaxed text-white">{s.l}</div>
             </div>
           ))}
         </div>
@@ -195,9 +195,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>3ステップで始められる</h2>
             <div className="grid md:grid-cols-3 gap-8 relative">
               {[
-                { step: "01", title: "無料相談", desc: "LINEで気軽にご連絡ください。業種・状況・お悩みを聞かせてください。" },
-                { step: "02", title: "プラン提案", desc: "お話を元に、最適なサービス内容と料金をご提案します。" },
-                { step: "03", title: "運用開始", desc: "こちらで全て作成して届けます。あなたはコピペするだけでOKです。" },
+                { step: "01", title: "無料相談", desc: "LINEで気軽にご連絡ください。\n業種・状況・お悩みを聞かせてください。" },
+                { step: "02", title: "プラン提案", desc: "お話を元に、最適な\nサービス内容と料金をご提案します。" },
+                { step: "03", title: "運用開始", desc: "こちらで全て作成して届けます。\nあなたはコピペするだけでOKです。" },
               ].map((item, i) => (
                 <div key={item.step} className="relative text-center">
                   {i < 2 && <div className="hidden md:block absolute top-8 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-px border-t-2 border-dashed border-stone-300" />}
@@ -205,7 +205,7 @@ export default function Home() {
                     {item.step}
                   </div>
                   <h3 className="font-bold text-lg mb-2" style={{ color: "var(--fg)" }}>{item.title}</h3>
-                  <p className="text-sm text-stone-500 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-stone-500 leading-relaxed" style={{ whiteSpace: "pre-line" }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -257,7 +257,7 @@ export default function Home() {
                               ))}
                             </ul>
                           </div>
-                          <div className="rounded-xl px-4 py-3 text-sm shrink-0" style={{ background: "var(--fg)", color: "white" }}>
+                          <div className="rounded-xl px-4 py-3 text-sm shrink-0 flex flex-col items-center justify-center text-center" style={{ background: "var(--dark-bg)", color: "white" }}>
                             <p className="text-xs text-stone-400 mb-0.5">料金目安</p>
                             <p className="font-bold">{s.price}</p>
                           </div>
@@ -331,10 +331,10 @@ export default function Home() {
       </section>
 
       {/* ── About ── */}
-      <section className="py-28 px-6" style={{ background: "var(--fg)" }}>
+      <section className="py-28 px-6" style={{ background: "var(--dark-bg)" }}>
         <div className="max-w-6xl mx-auto">
           <div ref={aboutRef} className="fade-up">
-            <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>About</p>
+            <p className="text-xs tracking-[0.3em] uppercase text-center mb-3 text-green-300">About</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16 text-white">運営者について</h2>
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="shrink-0">
@@ -344,14 +344,16 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-black text-white mb-1">KRC</h3>
-                <p className="text-sm mb-6" style={{ color: "var(--green)" }}>Shimoya</p>
+                <p className="text-sm mb-6 text-green-300">Shimoya</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {["YouTubeチャンネル「KRC禁煙大学」", "著書2冊"].map((tag) => (
-                    <span key={tag} className="text-xs px-3 py-1 rounded-full border border-white/20 text-stone-400">{tag}</span>
+                    <span key={tag} className="text-xs px-3 py-1 rounded-full border border-white/20 text-stone-300">{tag}</span>
                   ))}
                 </div>
                 <p className="text-stone-300 leading-relaxed">
-                  AIに可能性を感じてから、お金と時間を突っ込んで自分で試しまくっている人間です。その試行錯誤の積み重ねをそのままサービスにしました。
+                  AIはインターネットが登場したときと同じくらいの革命だと確信しています。その可能性を感じてから、お金と時間を突っ込んで自分で試しまくってきました。その試行錯誤の積み重ねを、そのままサービスにしています。
+                  <br /><br />
+                  SNS運用の経験を積み、YouTubeチャンネルの運営・著書（『禁煙奮闘記』『最強の禁煙メソッド50』）の出版を通じて「伝えること」を磨いてきました。大切なのはAIそのものより、どう使うか。その使い方を一緒に考えることが、自分の役割だと思っています。
                   <br /><br />
                   難しい話は一切なし。あなたのビジネスが楽になることだけを考えます。
                 </p>
@@ -370,7 +372,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-6 items-stretch">
               {plans.map((p) => (
                 <div key={p.name} className={`card-hover rounded-2xl p-6 md:p-8 flex flex-col gap-5 relative ${p.highlight ? "md:scale-105 shadow-2xl" : "bg-white border border-stone-200"}`}
-                  style={p.highlight ? { background: "var(--fg)" } : {}}>
+                  style={p.highlight ? { background: "var(--dark-bg)" } : {}}>
                   {p.highlight && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full bg-white" style={{ color: "var(--green)" }}>人気</span>
                   )}
