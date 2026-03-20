@@ -468,10 +468,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-white/70" />
         <div ref={ctaRef} className="fade-up relative z-10 max-w-xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: "var(--green)" }}>Contact</p>
-          <h2 className="text-3xl md:text-4xl font-black mb-5" style={{ color: "var(--fg)" }}>まずは、話してみてください。</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-5 whitespace-nowrap" style={{ color: "var(--fg)" }}>まずは話してみてください</h2>
           <p className="text-stone-500 leading-relaxed mb-12">
-            「うちに合うか分からない」「何から始めればいいか分からない」<br />
-            そんな状態でも大丈夫です。無料でご相談を受け付けています。
+            「うちに合うか分からない」<br />
+            「何から始めればいいか分からない」<br />
+            そんな状態でも大丈夫です。<br />
+            無料でご相談を受け付けています。
           </p>
           <div className="inline-block bg-white border border-stone-200 rounded-2xl p-6 md:p-10 mb-8 shadow-sm">
             <Image src="/generated/line-qr.png" alt="LINE QRコード" width={176} height={176} className="rounded-xl mx-auto" />
