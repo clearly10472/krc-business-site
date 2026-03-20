@@ -67,9 +67,41 @@ const services = [
 ];
 
 const plans = [
-  { name: "ライト", price: "3〜5万円", desc: "SNS運用 or 集客文章どちらか1つ", features: ["月次レポート", "メールサポート", "1ヶ月トライアル"], highlight: false },
-  { name: "スタンダード", price: "5〜8万円", desc: "SNS運用 ＋ 集客文章", features: ["月次レポート", "LINEサポート", "1ヶ月トライアル", "定例MTG（月1回）"], highlight: true },
-  { name: "プレミアム", price: "10〜15万円", desc: "全サービスフルパック", features: ["月次レポート", "優先LINEサポート", "1ヶ月トライアル", "定例MTG（月2回）", "業務フロー設計"], highlight: false },
+  {
+    name: "ライト", price: "3〜5万円", desc: "テキストコンテンツ特化プラン",
+    features: [
+      "X（Twitter）投稿文：毎日",
+      "ブログ記事（ホットペッパー等）：週2〜3本",
+      "テキストのみ（画像なし）",
+      "メールサポート",
+      "1ヶ月トライアル",
+    ],
+    highlight: false,
+  },
+  {
+    name: "スタンダード", price: "5〜8万円", desc: "SNS ＋ 集客文章 本格運用",
+    features: [
+      "X・Instagram・LINE等、希望のSNSに対応",
+      "投稿文：毎日レベルで作成",
+      "AI画像生成・画像素材も提供",
+      "集客文章（チラシ・DM・メルマガ）",
+      "LINEサポート ＋ 定例MTG（月1回）",
+      "1ヶ月トライアル",
+    ],
+    highlight: true,
+  },
+  {
+    name: "プレミアム", price: "10〜15万円", desc: "全部お任せ フルサポート",
+    features: [
+      "全SNS ＋ 全集客文章、毎日レベルで対応",
+      "SNS投稿の代行（運用丸ごとお任せ）",
+      "業務効率化システム構築",
+      "優先LINEサポート ＋ 定例MTG（月2回）",
+      "業務フロー設計",
+      "1ヶ月トライアル",
+    ],
+    highlight: false,
+  },
 ];
 
 const reasons = [
@@ -400,7 +432,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p className="text-center mt-8 text-stone-400 text-sm">※ 初回1ヶ月トライアルあり。料金はすべて税別です。</p>
+            <p className="text-center mt-8 text-stone-400 text-sm leading-relaxed">
+              ※ 上記料金はあくまで目安です。業務量・対応範囲によって変動します。<br />
+              まずはお気軽にご相談ください。詳細を確認した上でお見積もりします。
+            </p>
           </div>
         </div>
       </section>
