@@ -115,6 +115,7 @@ const reasons = [
 
 export default function Home() {
   const heroRef = useFadeUp();
+  const heroMobileRef = useFadeUp();
   const statsRef = useFadeUp();
   const painRef = useFadeUp();
   const howRef = useFadeUp();
@@ -148,14 +149,34 @@ export default function Home() {
       </header>
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
+      {/* Mobile layout */}
+      <div className="md:hidden pt-16" style={{ background: "#fafaf8" }}>
+        <Image src="/generated/hero-handwritten.png" alt="時間が増える。売上が動く。それがAIの仕事。" width={5504} height={3072} className="w-full h-auto" priority />
+        <div ref={heroMobileRef} className="fade-up px-6 py-10 text-center">
+          <p className="text-base text-stone-700 leading-relaxed mb-6">
+            SNS更新・集客文章・定型業務。<br />
+            お店が抱える"時間のムダ"を、<br />AIでまるごと解消します。
+          </p>
+          <div className="flex flex-col gap-4 justify-center mb-4">
+            <a href="#contact" className="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-full shadow-lg" style={{ background: "var(--green)" }}>
+              まずは無料で相談する <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href="#services" className="inline-flex items-center justify-center gap-2 text-stone-700 font-medium px-8 py-4 rounded-full border border-stone-300 bg-white">
+              サービスを見る
+            </a>
+          </div>
+          <p className="text-xs text-stone-500 tracking-wide">押し売り一切なし · 無料相談</p>
+        </div>
+      </div>
+      {/* Desktop layout */}
+      <section className="relative hidden md:flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16" style={{ background: "#fafaf8" }}>
         <Image src="/generated/hero-handwritten.png" alt="時間が増える。売上が動く。それがAIの仕事。" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-white/10" />
-        <div ref={heroRef} className="fade-up relative z-10 w-full flex flex-col items-center justify-end pb-16 md:pb-24 min-h-screen px-6">
+        <div ref={heroRef} className="fade-up relative z-10 w-full flex flex-col items-center justify-end pb-24 min-h-screen px-6">
           <div className="text-center mb-8 max-w-xl mx-auto">
-            <p className="text-base md:text-lg text-stone-700 leading-relaxed mb-6">
+            <p className="text-lg text-stone-700 leading-relaxed mb-6">
               SNS更新・集客文章・定型業務。<br />
-              地元のお店が抱える"時間のムダ"を、AIでまるごと解消します。
+              お店が抱える"時間のムダ"を、AIでまるごと解消します。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
               <a href="#contact" className="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-lg" style={{ background: "var(--green)" }}>
@@ -172,29 +193,29 @@ export default function Home() {
 
       {/* ── Stats ── */}
       <section className="py-14 px-6" style={{ background: "var(--dark-bg)" }}>
-        <div ref={statsRef} className="fade-up max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div ref={statsRef} className="fade-up max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {[
             { n: "初心者でも安心", l: "AIが初めてでも、丁寧にサポートします" },
             { n: "地域密着", l: "対面・オンライン、どちらにも対応" },
             { n: "小さく始められる", l: "まず1つの業務から、気軽に試せます" },
-          ].map((s) => (
-            <div key={s.n}>
+          ].map((s, i) => (
+            <div key={s.n} className={`py-4 md:py-0 ${i > 0 ? "border-t border-white/20 md:border-t-0 md:border-l md:border-white/20 md:pl-6" : ""}`}>
               <div className="text-xl font-black mb-2 text-white">{s.n}</div>
-              <div className="text-sm leading-relaxed text-white">{s.l}</div>
+              <div className="text-sm leading-relaxed text-white/80">{s.l}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── Pain Points ── */}
-      <section className="py-28 px-6">
+      <section className="py-16 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <div ref={painRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Pain Points</p>
             <h2 className="text-3xl md:text-4xl font-black text-center mb-4" style={{ color: "var(--fg)" }}>
               「やらなきゃ」は分かってる。
             </h2>
-            <p className="text-center text-stone-400 text-lg mb-14">でも、時間がない。</p>
+            <p className="text-center text-stone-400 text-lg mb-10 md:mb-14">でも、時間がない。</p>
             <div className="flex flex-col gap-8">
               {[
                 { img: "/generated/pain-sns-1.jpg", title: "SNS更新が続かない", text: "何を書けばいいか分からない。投稿を考える時間がない。やらなきゃと思いながら、気づけば1ヶ月が過ぎる。", reverse: false },
@@ -220,11 +241,11 @@ export default function Home() {
       </section>
 
       {/* ── How it works ── */}
-      <section className="py-28 px-6" style={{ background: "#f0ede8" }}>
+      <section className="py-16 md:py-28 px-6" style={{ background: "#f0ede8" }}>
         <div className="max-w-6xl mx-auto">
           <div ref={howRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>How it works</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>3ステップで始められる</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16" style={{ color: "var(--fg)" }}>3ステップで始められる</h2>
             <div className="grid md:grid-cols-3 gap-8 relative">
               {[
                 { step: "01", title: "無料相談", desc: "LINEで気軽にご連絡ください。\n業種・状況・お悩みを聞かせてください。" },
@@ -246,11 +267,11 @@ export default function Home() {
       </section>
 
       {/* ── Services ── */}
-      <section id="services" className="py-28 px-6">
+      <section id="services" className="py-16 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <div ref={servicesRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Services</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>3つのサービス</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16" style={{ color: "var(--fg)" }}>3つのサービス</h2>
             <div className="flex flex-col gap-8">
               {services.map((s) => {
                 const Icon = s.icon;
@@ -305,11 +326,11 @@ export default function Home() {
       </section>
 
       {/* ── Case Study ── */}
-      <section className="py-28 px-6" style={{ background: "#f0ede8" }}>
+      <section className="py-16 md:py-28 px-6" style={{ background: "#f0ede8" }}>
         <div className="max-w-7xl mx-auto">
           <div ref={caseRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Case Study</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>導入事例</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16" style={{ color: "var(--fg)" }}>導入事例</h2>
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 h-64 md:h-auto relative">
@@ -337,11 +358,11 @@ export default function Home() {
       </section>
 
       {/* ── Why ── */}
-      <section className="py-28 px-6">
+      <section className="py-16 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <div ref={reasonsRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Why FlowBoost Lab</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>選ばれる理由</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16" style={{ color: "var(--fg)" }}>選ばれる理由</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {reasons.map((r) => {
                 const Icon = r.icon;
@@ -363,12 +384,12 @@ export default function Home() {
       </section>
 
       {/* ── About ── */}
-      <section className="py-28 px-6" style={{ background: "var(--dark-bg)" }}>
+      <section className="py-16 md:py-28 px-6" style={{ background: "var(--dark-bg)" }}>
         <div className="max-w-6xl mx-auto">
           <div ref={aboutRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3 text-green-300">About</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16 text-white">運営者について</h2>
-            <div className="flex flex-col md:flex-row gap-12 items-center">
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16 text-white">運営者について</h2>
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
               <div className="shrink-0">
                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white/10">
                   <Image src="/KRC.png" alt="KRC" width={160} height={160} className="object-cover w-full h-full" />
@@ -396,11 +417,11 @@ export default function Home() {
       </section>
 
       {/* ── Pricing ── */}
-      <section id="pricing" className="py-28 px-6" style={{ background: "#f0ede8" }}>
+      <section id="pricing" className="py-16 md:py-28 px-6" style={{ background: "#f0ede8" }}>
         <div className="max-w-6xl mx-auto">
           <div ref={pricingRef} className="fade-up">
             <p className="text-xs tracking-[0.3em] uppercase text-center mb-3" style={{ color: "var(--green)" }}>Pricing</p>
-            <h2 className="text-3xl md:text-4xl font-black text-center mb-16" style={{ color: "var(--fg)" }}>料金プラン</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-center mb-10 md:mb-16" style={{ color: "var(--fg)" }}>料金プラン</h2>
             <div className="grid md:grid-cols-3 gap-6 items-stretch">
               {plans.map((p) => (
                 <div key={p.name} className={`card-hover rounded-2xl p-6 md:p-8 flex flex-col gap-5 relative ${p.highlight ? "md:scale-105 shadow-2xl" : "bg-white border border-stone-200"}`}
@@ -442,7 +463,7 @@ export default function Home() {
 
 
       {/* ── CTA ── */}
-      <section id="contact" className="relative py-28 px-6 overflow-hidden text-center">
+      <section id="contact" className="relative py-16 md:py-28 px-6 overflow-hidden text-center">
         <Image src="/generated/cta-bg.jpg" alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-white/70" />
         <div ref={ctaRef} className="fade-up relative z-10 max-w-xl mx-auto">
