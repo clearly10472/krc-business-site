@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import {
   Instagram, PenLine, Clock, CheckCircle, MapPin,
   Zap, BarChart2, RefreshCw, ArrowRight,
-  Star, MessageSquare,
+  Star,
 } from "lucide-react";
 
 function FBLLogo({ size = "md" }: { size?: "sm" | "md" }) {
@@ -453,10 +453,7 @@ export default function Home() {
             そんな状態でも大丈夫です。無料でご相談を受け付けています。
           </p>
           <div className="inline-block bg-white border border-stone-200 rounded-2xl p-6 md:p-10 mb-8 shadow-sm">
-            <div className="w-44 h-44 rounded-xl mx-auto flex flex-col items-center justify-center gap-2 border border-stone-200" style={{ background: "var(--card-green)" }}>
-              <MessageSquare className="w-8 h-8" style={{ color: "var(--green)" }} />
-              <p className="text-sm text-stone-400 text-center leading-relaxed">LINE QRコード<br />準備中</p>
-            </div>
+            <Image src="/generated/line-qr.png" alt="LINE QRコード" width={176} height={176} className="rounded-xl mx-auto" />
             <p className="text-stone-500 text-sm mt-5">LINEで友達追加して<br />気軽にメッセージしてください</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-stone-400 text-xs">
